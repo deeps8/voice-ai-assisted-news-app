@@ -1,0 +1,25 @@
+.commands {
+  color: white;
+  h1{
+    padding: 20px;
+  }
+  p {
+    padding: 0 20px;
+    font-size: 17px;
+    line-height: 29px;
+  }
+  .cmd{
+    padding: 5px 20px;
+    h3{
+      color: #2196f3;
+      margin: 5px 0;
+    }
+    ul{
+      li{
+        margin: 12px 0;
+        line-height: 22px;
+        list-style: disc;
+      }
+    }
+  }
+}

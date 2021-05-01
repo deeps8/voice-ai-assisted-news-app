@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="header">
+    <h1>Todo App AI</h1>
+    <div [routerLink]="['/commands']" class="links">
+      <p  >Voice Commands</p>
+    </div>
+  </div>
+  <div class="header">
+    <div class="user-info" >
+      <div class="user-actions" >
+        <img src="assets/password.png" [ngStyle]="{background: showPass?'#f4f4f526':'#badefd'}" (click)="showPass = !showPass"  />
+        <img src="assets/logout.png" (click)="userserv.logoutUser()" />
+       </div>
+     <p>{{username}}</p>
+     <span *ngIf="showPass" >********</span>
+     <span *ngIf="!showPass" >password</span>
+
+
+    </div>
+  </div>
+  <div class="sticky-header">
+    <p>Todo List</p>
+    <button *ngIf="this.todo.addTaskSwitch" (click)="todo.addTaskSwitch = !todo.addTaskSwitch">Add Task</button>
+    <button *ngIf="!this.todo.addTaskSwitch" (click)="todo.addTaskSwitch = !todo.addTaskSwitch"
+      style="background-color: gray;">Back</button>
+  </div>
+
+  <!-- add task section -->
+  <div class="add-task-form" *ngIf="!this.todo.addTaskSwitch">
+    <p>Category</p>
+    <input type="text" name="category" [(ngModel)]="this.todo.taskCategory">
+    <p>Task Title</p>
+    <input type="text" name="task" [(ngModel)]="this.todo.taskTitle">
+    <p></p>
+    <button (click)="this.todo.addTask()">Add</button>
+  </div>
+
+  <!-- task list section -->
+  <div class="todo-list" *ngIf="this.todo.addTaskSwitch">
+    <ul class="list">
+      <li *ngFor="let t of todo.todoList; let i=index ">
+        <button [ngClass]="{done: t.done}" >{{i+1}}</button>
+        <div style="    margin: 15px 10px; ">
+          <p>{{t.title}}</p> <span>{{t.category}} - </span> <span>{{t.dateOfCreation | date}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

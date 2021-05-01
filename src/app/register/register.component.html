@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="header">
+    <h1>Todo App AI</h1>
+    <div [routerLink]="['/commands']" class="links">
+      <p  style="margin-right: 20px;">Voice Commands</p>
+    </div>
+  </div>
+  <div class="form-sec">
+    <div class="reg-sec" *ngIf=" regService.logregSwitch">
+      <h4>Welcome</h4>
+      <p>Username</p>
+      <input type="text" [(ngModel)]="this.regService.username">
+      <p>Password</p>
+      <input type="password" [(ngModel)]="this.regService.password">
+      <button type="submit" (click)="this.regService.registerUser()">Sign up</button>
+      <p>already registered ? <b (click)=" regService.logregSwitch = !regService.logregSwitch"> Login</b></p>
+    </div>
+    <div class="log-sec" *ngIf="!regService.logregSwitch">
+      <h4>Welcome</h4>
+      <p>Username</p>
+      <input type="text" [(ngModel)]="this.regService.username">
+      <p>Password</p>
+      <input type="password" [(ngModel)]="this.regService.password">
+      <button type="submit" (click)="this.regService.loginUser()">Login</button>
+      <p>not have an account ? <b (click)=" regService.logregSwitch = !regService.logregSwitch"> Sign up</b></p>
+    </div>
+  </div>
+
+</div>

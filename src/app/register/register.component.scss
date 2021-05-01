@@ -1,0 +1,42 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin: 0 auto;
+  h1{
+    margin-right: auto;
+  }
+  .links{
+    padding: 20px 0px;
+    place-content: center;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+  }
+}
+.form-sec {
+
+  margin: 0 auto;
+  padding: 20px;
+  background: #131415;
+  border-radius: 5px;
+  margin-top: 50px;
+  color: white;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    h4 {
+      margin: 0 0 20px 0;
+      font-size: 23px;
+      font-family: sans-serif;
+      color: #00acc1;
+    }
+    b{
+      color: #00acc1;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
